@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DOM Event 실습</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .container {
+            padding: 25px;
+            border: 1px solid #cccccc;
+            border-radius: 10px;
+        }
+
+        .highlight {
+            color: white;
+            background-color: royalblue;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .input-area {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        #item-input {
+            flex: 1;
+            padding: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-top: 10px;
+            padding: 10px;
+
+            background-color: #f2f2f2;
+            border-radius: 5px;
+        }
+
+        .delete-btn {
+            color: white;
+            background-color: crimson;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>DOM / Event 실습</h1>
+
+        <p id="message">
+            버튼을 클릭하면 이 문장이 변경됩니다.
+        </p>
+
+        <button id="change-btn">
+            문구 변경
+        </button>
+
+        <div class="input-area">
+            <input
+                type="text"
+                id="item-input"
+                placeholder="추가할 항목을 입력하세요"
+            >
+
+            <button id="add-btn">
+                추가
+            </button>
+        </div>
+
+        <ul id="item-list"></ul>
+    </div>
+
+    <script>
+        // HTML 요소 가져오기
+        const message = document.querySelector("#message");
+        const changeButton = document.querySelector("#change-btn");
+
+        const itemInput = document.querySelector("#item-input");
+        const addButton = document.querySelector("#add-btn");
+        const itemList = document.querySelector("#item-list");
+
+        // 문구 변경 버튼 클릭 이벤트
+        changeButton.addEventListener("click", function () {
+            message.textContent = "버튼 클릭 이벤트가 실행되었습니다!";
+            message.classList.toggle("highlight");
+        });
+
+        // 항목을 추가하는 함수
+        function addItem() {
+            const inputValue = itemInput.value.trim();
+
+            // 입력값이 비어 있으면 추가하지 않음
+            if (inputValue === "") {
+                alert("내용을 입력해주세요.");
+                itemInput.focus();
+                return;
+            }
+
+            // 새로운 li 요소 생성
+            const newItem = document.createElement("li");
+
+            // 입력한 내용을 담는 span 생성
+            const itemText = document.createElement("span");
+            itemText.textContent = inputValue;
+
+            // 삭제 버튼 생성
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent = "삭제";
+            deleteButton.classList.add("delete-btn");
+
+            // 삭제 버튼 클릭 이벤트
+            deleteButton.addEventListener("click", function () {
+                newItem.remove();
+            });
+
+            // li 안에 글자와 삭제 버튼 넣기
+            newItem.appendChild(itemText);
+            newItem.appendChild(deleteButton);
+
+            // ul 안에 li 넣기
+            itemList.appendChild(newItem);
+
+            // 입력창 비우기
+            itemInput.value = "";
+            itemInput.focus();
+        }
+
+        // 추가 버튼 클릭
+        addButton.addEventListener("click", addItem);
+
+        // 입력창에서 Enter 키 누르기
+        itemInput.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                addItem();
+            }
+        });
+    </script>
+</body>
+</html>
