@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>회원가입</title>
+</head>
+
+<body>
+    <h1>회원가입</h1>
+
+    <form>
+        <p>
+            <label for="name">이름</label><br>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="이름을 입력하세요"
+            >
+        </p>
+
+        <p>
+            <label for="email">이메일 주소</label><br>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="example@email.com"
+            >
+        </p>
+
+        <p>
+            <label for="password">비밀번호</label><br>
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="비밀번호를 입력하세요"
+            >
+        </p>
+
+        <fieldset>
+            <legend>관심 분야</legend>
+
+            <label>
+                <input
+                    type="checkbox"
+                    name="interest"
+                    value="html"
+                >
+                HTML
+            </label>
+
+            <label>
+                <input
+                    type="checkbox"
+                    name="interest"
+                    value="css"
+                >
+                CSS
+            </label>
+
+            <label>
+                <input
+                    type="checkbox"
+                    name="interest"
+                    value="javascript"
+                >
+                JavaScript
+            </label>
+
+            <label>
+                <input
+                    type="checkbox"
+                    name="interest"
+                    value="ai"
+                >
+                인공지능
+            </label>
+        </fieldset>
+
+        <p>
+            <label>
+                <input
+                    type="checkbox"
+                    name="agreement"
+                >
+                개인정보 수집 및 이용에 동의합니다.
+            </label>
+        </p>
+
+        <button type="submit">가입하기</button>
+        <button type="reset">다시 작성</button>
+    </form>
+
+</body>
+</html>
