@@ -1,0 +1,102 @@
+/* 모든 요소에 적용 */
+* {
+    box-sizing: border-box;
+}
+
+/* 태그 선택자 */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f3f6fb;
+    color: #222222;
+}
+
+/* ID 선택자 */
+#main-header {
+    background-color: royalblue;
+    color: white;
+    text-align: center;
+
+    /* padding 변경 실습 */
+    padding: 40px 20px;
+}
+
+#main-header h1 {
+    margin-top: 0;
+}
+
+/* 카드들을 배치하는 Flexbox */
+.card-container {
+    display: flex;
+
+    /* 기본 화면에서는 가로 방향 */
+    flex-direction: row;
+
+    justify-content: center;
+    gap: 20px;
+
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* class 선택자 */
+.card {
+    flex: 1;
+    min-width: 0;
+
+    background-color: white;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+
+    padding: 25px;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card h2 {
+    color: royalblue;
+}
+
+/* 카드에 마우스를 올렸을 때 */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+}
+
+button {
+    padding: 10px 16px;
+
+    color: white;
+    background-color: royalblue;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: midnightblue;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #dddddd;
+}
+
+/* 화면 폭이 700px 이하일 때 적용 */
+@media (max-width: 700px) {
+    #main-header {
+        padding: 30px 15px;
+    }
+
+    .card-container {
+        /* 가로 배치를 세로 배치로 변경 */
+        flex-direction: column;
+    }
+}

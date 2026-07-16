@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript 기초 실습</title>
+
+    <style>
+        body {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6fa;
+        }
+
+        .container {
+            padding: 30px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .practice-box {
+            margin-bottom: 25px;
+            padding: 20px;
+            border: 1px solid #dddddd;
+            border-radius: 8px;
+        }
+
+        button {
+            margin-right: 5px;
+            padding: 10px 15px;
+            color: white;
+            background-color: royalblue;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: midnightblue;
+        }
+
+        .result {
+            margin-top: 15px;
+            padding: 12px;
+            background-color: #eef3ff;
+            border-radius: 5px;
+        }
+
+        input {
+            padding: 9px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <h1>JavaScript 기초 실습</h1>
+
+        <!-- 숫자와 연산자 실습 -->
+        <section class="practice-box">
+            <h2>1. 숫자 계산</h2>
+
+            <p>두 숫자를 더한 결과를 확인합니다.</p>
+
+            <button id="calculate-btn">계산하기</button>
+
+            <p id="calculate-result" class="result">
+                계산 결과가 여기에 표시됩니다.
+            </p>
+        </section>
+
+        <!-- 조건문 실습 -->
+        <section class="practice-box">
+            <h2>2. 조건문 확인</h2>
+
+            <label for="age-input">나이 입력:</label>
+
+            <input
+                type="number"
+                id="age-input"
+                placeholder="나이를 입력하세요"
+            >
+
+            <button id="age-btn">확인하기</button>
+
+            <p id="age-result" class="result">
+                조건 판단 결과가 여기에 표시됩니다.
+            </p>
+        </section>
+
+        <!-- 배열과 반복문 실습 -->
+        <section class="practice-box">
+            <h2>3. 배열과 반복문</h2>
+
+            <button id="show-array-btn">과목 목록 출력</button>
+
+            <p id="array-result" class="result">
+                배열의 내용이 여기에 표시됩니다.
+            </p>
+        </section>
+
+        <!-- 배열 항목 추가 -->
+        <section class="practice-box">
+            <h2>4. 배열 항목 추가</h2>
+
+            <input
+                type="text"
+                id="subject-input"
+                placeholder="추가할 과목 입력"
+            >
+
+            <button id="add-subject-btn">과목 추가</button>
+
+            <p id="subject-result" class="result">
+                과목을 추가해보세요.
+            </p>
+        </section>
+    </main>
+
+    <script src="../js/basic.js"></script>
+</body>
+</html>
