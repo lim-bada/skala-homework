@@ -7,7 +7,7 @@ const loadButton = document.querySelector("#load-btn");
 const status = document.querySelector("#status");
 const dataList = document.querySelector("#data-list");
 
-// 지연 시간: 2000ms = 5초
+// 지연 시간: 5000ms = 5초
 const delayTime = 5000;
 
 // 버튼 클릭 이벤트
