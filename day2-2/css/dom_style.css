@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 40px 20px;
+
+    font-family: Arial, sans-serif;
+    background-color: #f4f6fa;
+    color: #222222;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+.practice-box {
+    margin-bottom: 25px;
+    padding: 25px;
+
+    background-color: white;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+
+    border: 1px solid #bbbbbb;
+    border-radius: 6px;
+}
+
+button {
+    padding: 10px 16px;
+
+    color: white;
+    background-color: royalblue;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: midnightblue;
+}
+
+.highlight {
+    padding: 12px;
+
+    color: white;
+    background-color: royalblue;
+
+    border-radius: 6px;
+}
+
+#notice {
+    color: #666666;
+}
+
+#todo-list {
+    padding: 0;
+    list-style: none;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 10px;
+    padding: 12px;
+
+    background-color: #eef3ff;
+    border-radius: 6px;
+}
+
+.delete-btn {
+    background-color: crimson;
+}
+
+.delete-btn:hover {
+    background-color: darkred;
+}

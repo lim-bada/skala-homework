@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DOM / Event 실습</title>
+
+    <link rel="stylesheet" href="../css/dom_style.css">
+</head>
+
+<body>
+    <main class="container">
+        <h1>DOM / Event 실습</h1>
+
+        <!-- 문구 변경 실습 -->
+        <section class="practice-box">
+            <h2>1. 문구 변경</h2>
+
+            <p id="message">
+                버튼을 클릭하면 문구가 변경됩니다.
+            </p>
+
+            <button type="button" id="change-btn">
+                문구 변경
+            </button>
+        </section>
+
+        <!-- 입력값 읽기 및 목록 추가 -->
+        <section class="practice-box">
+            <h2>2. 할 일 목록</h2>
+
+            <div class="input-area">
+                <input
+                    type="text"
+                    id="todo-input"
+                    placeholder="할 일을 입력하세요"
+                >
+
+                <button type="button" id="add-btn">
+                    추가
+                </button>
+            </div>
+
+            <p id="notice">
+                할 일을 입력한 후 추가 버튼을 누르세요.
+            </p>
+
+            <ul id="todo-list"></ul>
+        </section>
+    </main>
+
+    <script src="../js/dom_event.js"></script>
+</body>
+</html>
