@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Async / Module 실습</title>
+
+    <link rel="stylesheet" href="../css/async_style.css">
+</head>
+
+<body>
+    <main class="container">
+        <h1>Async / Module 실습</h1>
+
+        <section class="practice-box">
+            <h2>지연 데이터 불러오기</h2>
+
+            <p>
+                버튼을 클릭하면 일정 시간이 지난 후 학습 데이터가 표시됩니다.
+            </p>
+
+            <button type="button" id="load-btn">
+                데이터 불러오기
+            </button>
+
+            <p id="status">
+                버튼을 눌러 데이터를 불러오세요.
+            </p>
+
+            <ul id="data-list"></ul>
+        </section>
+    </main>
+
+    <!-- 모듈이므로 type="module" 필수 -->
+    <script type="module" src="../js/app.js"></script>
+</body>
+</html>
