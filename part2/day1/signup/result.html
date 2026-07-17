@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 결과</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+
+    <header class="page-header">
+        <h1>✅ 회원가입 완료</h1>
+        <p>입력한 회원 정보를 확인해 주세요.</p>
+    </header>
+
+    <main class="container result-container">
+
+        <section class="result-card">
+            <h2>회원 정보</h2>
+
+            <table class="result-table">
+                <caption>회원가입 입력 결과</caption>
+
+                <thead>
+                    <tr>
+                        <th scope="col">항목</th>
+                        <th scope="col">입력 내용</th>
+                    </tr>
+                </thead>
+
+                <tbody id="resultBody">
+                    <!-- JavaScript로 결과가 출력됩니다. -->
+                </tbody>
+            </table>
+
+            <div class="result-message">
+                <strong>회원가입이 정상적으로 완료되었습니다.</strong>
+                <p>입력한 정보가 올바른지 확인해 주세요.</p>
+            </div>
+
+            <div class="button-group">
+                <a href="signUp.html" class="btn btn-reset">
+                    다시 작성
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SKALA 회원가입 실습</p>
+    </footer>
+
+    <script>
+        // 현재 주소의 쿼리스트링을 가져옵니다.
+        const params = new URLSearchParams(window.location.search);
+
+        // 같은 name을 가진 체크박스 값을 모두 가져옵니다.
+        const interests = params.getAll("interest");
+
+        // 비밀번호는 결과 화면에서 그대로 노출하지 않고 별표로 표시합니다.
+        const password = params.get("userPw") || "";
+        const maskedPassword = password
+            ? "*".repeat(password.length)
+            : "입력하지 않음";
+
+        // 표에 표시할 데이터입니다.
+        const resultData = [
+            ["아이디", params.get("userId") || "입력하지 않음"],
+            ["비밀번호", maskedPassword],
+            ["이메일", params.get("userEmail") || "입력하지 않음"],
+            ["이름", params.get("userName") || "입력하지 않음"],
+            ["생년월일", params.get("userBirth") || "입력하지 않음"],
+            ["전화번호", params.get("userTel") || "입력하지 않음"],
+            ["성별", params.get("gender") || "선택하지 않음"],
+            [
+                "관심 분야",
+                interests.length > 0
+                    ? interests.join(", ")
+                    : "선택하지 않음"
+            ],
+            ["거주 지역", params.get("region") || "선택하지 않음"],
+            ["자기소개", params.get("intro") || "입력하지 않음"],
+            ["약관 동의", params.get("agree") || "동의하지 않음"]
+        ];
+
+        const resultBody = document.querySelector("#resultBody");
+
+        // 배열에 저장된 값을 한 행씩 표에 출력합니다.
+        resultData.forEach(function(item) {
+            const row = document.createElement("tr");
+            const titleCell = document.createElement("th");
+            const valueCell = document.createElement("td");
+
+            titleCell.scope = "row";
+            titleCell.textContent = item[0];
+            valueCell.textContent = item[1];
+
+            row.appendChild(titleCell);
+            row.appendChild(valueCell);
+            resultBody.appendChild(row);
+        });
+    </script>
+
+</body>
+</html>
