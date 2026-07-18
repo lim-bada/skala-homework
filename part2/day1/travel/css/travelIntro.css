@@ -1,0 +1,368 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: #222;
+    background-color: #f7fafc;
+    font-family: Arial, sans-serif;
+}
+
+/* 고정 헤더 */
+.page-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(15, 45, 55, 0.95);
+    z-index: 1000;
+}
+
+/* 내비게이션 */
+.main-nav {
+    width: 90%;
+    max-width: 1100px;
+    height: 70px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    margin: 0;
+    color: white;
+    font-size: 24px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-menu a:hover {
+    color: #7dd3fc;
+}
+
+/* 히어로 영역 */
+.hero {
+    position: relative;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            rgba(0, 30, 40, 0.55),
+            rgba(0, 30, 40, 0.55)
+        ),
+        url("../media/jeju-hero.JPEG") center / cover no-repeat;
+
+    color: white;
+    text-align: center;
+}
+
+.hero-content {
+    width: 90%;
+    max-width: 750px;
+}
+
+.hero-label {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.hero h2 {
+    margin: 0 0 20px;
+    font-size: 48px;
+}
+
+.hero-content > p {
+    line-height: 1.8;
+}
+
+.hero-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 13px 24px;
+
+    background-color: white;
+    color: #164e63;
+
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero-button:hover {
+    background-color: #bae6fd;
+    transform: scale(1.05);
+}
+
+/* 고정 내비게이션에 섹션 제목이 가려지는 현상 방지 */
+section {
+    scroll-margin-top: 70px;
+}
+
+/* 공통 섹션 너비 */
+.section-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-label {
+    margin: 0 0 10px;
+    color: #0891b2;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.section-description {
+    margin: 0 0 35px;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* 주요 명소 섹션 */
+.attractions-section {
+    padding: 100px 0;
+    background-color: #f7fafc;
+}
+
+.attractions-section h2 {
+    margin: 0 0 15px;
+    font-size: 36px;
+    color: #164e63;
+}
+
+/* 명소 갤러리 */
+.attraction-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.attraction-card {
+    margin: 0;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.image-box {
+    height: 230px;
+    overflow: hidden;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.attraction-card:hover .image-box img {
+    transform: scale(1.08);
+}
+
+.attraction-card figcaption {
+    padding: 22px;
+}
+
+.attraction-card h3 {
+    margin: 0 0 12px;
+    color: #164e63;
+    font-size: 22px;
+}
+
+.attraction-card figcaption p {
+    margin: 0;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* 먹거리 섹션 */
+.food-section {
+    padding: 100px 0;
+    background-color: white;
+}
+
+.food-section h2 {
+    margin: 0 0 15px;
+    color: #164e63;
+    font-size: 36px;
+}
+
+/* 먹거리와 여행 팁 2단 배치 */
+.food-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* 먹거리 본문 */
+.food-article {
+    padding: 30px;
+    background-color: #f7fafc;
+    border-radius: 15px;
+}
+
+.food-article h3,
+.travel-tip h3 {
+    margin: 0 0 22px;
+    color: #164e63;
+    font-size: 25px;
+}
+
+.food-list {
+    display: grid;
+    gap: 18px;
+}
+
+.food-item {
+    padding: 20px;
+    background-color: white;
+    border-left: 5px solid #0891b2;
+    border-radius: 10px;
+}
+
+.food-item h4 {
+    margin: 0 0 10px;
+    color: #155e75;
+    font-size: 19px;
+}
+
+.food-item p {
+    margin: 0;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* 여행 팁 */
+.travel-tip {
+    padding: 30px;
+    background-color: #ecfeff;
+    border: 1px solid #a5f3fc;
+    border-radius: 15px;
+}
+
+.travel-tip ul {
+    margin: 0;
+    padding-left: 22px;
+}
+
+.travel-tip li {
+    margin-bottom: 15px;
+    color: #334155;
+    line-height: 1.7;
+}
+
+.travel-tip li:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 800px) {
+    .main-nav {
+        height: auto;
+        padding: 15px 0;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-menu {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-menu a {
+        font-size: 14px;
+    }
+
+    .attraction-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .food-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h2 {
+        font-size: 36px;
+    }
+
+    section {
+        scroll-margin-top: 120px;
+    }
+}
+
+/* 여행 영상 섹션 */
+.video-section {
+    padding: 100px 0;
+    background-color: #f7fafc;
+}
+
+.video-section h2 {
+    margin: 0 0 15px;
+    color: #164e63;
+    font-size: 36px;
+}
+
+.video-box {
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #111;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.video-box video {
+    display: block;
+    width: 100%;
+}
+
+/* 푸터 */
+.page-footer {
+    padding: 35px 20px;
+    background-color: #164e63;
+    color: white;
+    text-align: center;
+}
+
+.page-footer p {
+    margin: 0 0 12px;
+}
+
+.page-footer a {
+    color: #bae6fd;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.page-footer a:hover {
+    color: white;
+    text-decoration: underline;
+}
