@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>인터랙티브 할 일 관리 앱</title>
+
+    <link rel="stylesheet" href="../css/todoList.css">
+</head>
+
+<body>
+    <main class="todo-app">
+
+        <!-- 앱 제목과 오늘의 한마디 -->
+        <header class="app-header">
+            <h1>📝 오늘의 할 일</h1>
+
+            <p id="quote">
+                오늘의 한마디를 불러오는 중입니다...
+            </p>
+        </header>
+
+        <!-- 할 일 입력 영역 -->
+        <section class="input-section">
+            <h2 class="sr-only">할 일 추가</h2>
+
+            <div class="input-group">
+                <label for="todo-input" class="sr-only">
+                    할 일 내용
+                </label>
+
+                <input
+                    type="text"
+                    id="todo-input"
+                    placeholder="할 일을 입력하세요"
+                    maxlength="100"
+                    autocomplete="off"
+                >
+
+                <button type="button" id="add-btn">
+                    추가
+                </button>
+            </div>
+        </section>
+
+        <!-- 필터 버튼 영역 -->
+        <section class="filter-section" aria-label="할 일 필터">
+            <button
+                type="button"
+                class="filter-btn active"
+                data-filter="all"
+            >
+                전체
+            </button>
+
+            <button
+                type="button"
+                class="filter-btn"
+                data-filter="active"
+            >
+                진행 중
+            </button>
+
+            <button
+                type="button"
+                class="filter-btn"
+                data-filter="completed"
+            >
+                완료
+            </button>
+        </section>
+
+        <!-- 할 일 목록 영역 -->
+        <section class="list-section">
+            <h2 class="sr-only">할 일 목록</h2>
+
+            <ul id="todo-list" aria-live="polite">
+                <!-- JavaScript로 할 일 항목이 추가될 부분 -->
+            </ul>
+        </section>
+
+        <!-- 할 일 개수 요약 -->
+        <footer class="todo-summary">
+            <p>
+                전체
+                <strong id="total-count">0</strong>개
+            </p>
+
+            <p>
+                완료
+                <strong id="completed-count">0</strong>개
+            </p>
+        </footer>
+
+    </main>
+
+    <script type="module" src="../js/app.js"></script>
+</body>
+</html>
